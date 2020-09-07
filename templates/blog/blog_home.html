@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% for object in object_list %}
+	<section id="section-blog" class="grid">
+    <div class="container">
+      <ul>
+        <li>
+          <div class="card">
+          	<!--Image size 640x433 -->
+            <div class="card-content">
+              <h3 class="card-title">{{object.title}}</h3>
+              <img src="{% static 'images/images/computersmile_sZUC7U9.jpg' %}">
+              <h5 class="card-slug">{{object.slug}}</h5>
+              <p>{{object.content|truncatewords:20}}</p>
+              <span>{{object.timestamp}}</span><br>
+              <a class="btn" href="">Read More</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+	{% endfor %}
+{% endblock %}
+
+

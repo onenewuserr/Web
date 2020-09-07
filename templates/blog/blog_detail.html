@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<section id="section-blog" class="grid">
+    <div class="container">
+      <ul>
+        <li>
+          <div class="card">
+            <!--Image size 640x433 -->
+            <div class="card-content">
+              <h3 class="card-title">{{object.title}}</h3>
+              <img src="{% static 'images/images/computersmile_sZUC7U9.jpg' %}">
+              <h5 class="card-slug">{{object.slug}}</h5>
+              <p>{{object.content}}</p>
+              <span>{{object.timestamp}}</span><br>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+{% endblock %}

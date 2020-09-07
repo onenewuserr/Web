@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container">
+	<form method="POST" enctype="multipart/form-data">
+		<h3 class="form-title">Create Post</h3>
+		{% csrf_token %}
+		<label>Title</label><p>{{form.title}}</p><br>
+		<label>Slug</label><p>{{form.slug}}</p><br>
+		<label>Content</label><p class='text-area'>{{form.content}}</p>
+		<p>Image: {{form.image}}</p>
+		<input class="form-btn" type="submit" name="blog_create" value="Create">
+	</form>
+</div>
+
+{% endblock %}
+
+

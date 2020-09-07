@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container">
+	<form method="POST" enctype="multi-part/data">
+		<h3 class="form-title">{{object.title}}</h3>
+		<p>Are you sure you want to delete?</p>
+		{% csrf_token %}
+		{{form.as_p}}
+		<input class="form-btn" type="submit" name="blog_delete" value="Delete">
+	</form>
+</div>
+
+{% endblock %}

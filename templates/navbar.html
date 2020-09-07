@@ -1,0 +1,30 @@
+
+<nav class="navbar">
+  <ul>
+    <li>
+      <a href="{% url 'home' %}">Home</a>
+    </li>
+    <li>
+      <a href="{% url 'about' %}">About</a>
+    </li>
+    <li>
+      <a href="{% url 'product:product-list' %}">Shop</a>
+    </li>
+    <li>
+      <a href="{% url 'blog:blog_home' %}">Blog</a>
+    </li>
+    <li>
+      <a href="{% url 'accounts:contact' %}">Contact</a>
+    </li>
+    {% if user.is_authenticated %}
+    <li>
+      <a href="{% url 'accounts:logout' %}">Logout</a>
+    </li>
+    {% else %}
+    <li>
+      <a href="{% url 'accounts:login' %}">Login</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+

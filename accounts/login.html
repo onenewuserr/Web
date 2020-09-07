@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+
+
+<div class="container">
+	<form method="POST">{% csrf_token %}{{form.as_p}}
+		<div class="login-form">
+			<h2 class="form-title">Login</h2>
+			{% for message in messages %}
+				{% if error %}
+				<p style="color: #cc0000;">{{message}}</p>
+				{% else %}
+				<p style="color: green;">{{message}}</p>
+				{% endif %}
+			{% endfor %}
+			<input type="text" name="login-user" placeholder="Username"><br>
+			<input type="password" name="login-password" placeholder="Password"><br>
+			<input class="form-btn" type="submit" name="login" value="Login">
+			<p>Already a user? or <a style="text-decoration: none;" href="{% url 'accounts:register' %}">Sign Up!</a></p>
+		</div>
+	</form>
+</div>
+{% endblock %}

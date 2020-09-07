@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container">
+	<form method="POST">{% csrf_token %}
+		<h3 class="form-title">Create your account</h3>
+		<label>First name:<br> </label>{{form.first_name}}<br>
+		<label>Last name:<br> </label>{{form.last_name}}<br>
+		<label>Username:<br> </label>{{form.username}}<br>
+		<label>Email:<br> </label>{{form.email}}<br>
+		<label>Password:<br> </label>{{form.password1}}<br>
+		<label>Confirm Password:<br> </label>{{form.password2}}<br>
+		<input class="form-btn" type="submit" name="register" value="Register">
+	</form>
+</div>
+
+{% endblock %}

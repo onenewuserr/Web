@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container">
+	<form method="POST">
+		<h2 class="form-title">Contact Us</h2>
+		{% csrf_token %}
+		{% if user.is_authenticated %}
+			<label>Email</label><br>
+			<input type="text" name="email" value="{{request.user.email}}"><br>
+			<label>Message: </label><br>
+			{{form.message}}<br>
+		{% else %}
+			<label>Email: </label><br>
+			{{form.email}}<br>
+			<label>Message: </label><br>
+			{{form.message}}<br>
+		{% endif %}
+		<input class="form-btn" type="submit" name="contact" value="Send">
+	</form>
+</div>
+
+{% endblock %}
